@@ -136,7 +136,7 @@ def ball_Physics():
   global rectangle, score, highscore_display, ball, high_score, gameover_popup
   game_State = False # false means that the player has not lost yet
   random_location = random.randint(0, 665)
-  i = Image.open("images/earth.png")
+  i = Image.open("images/LANDMAN.png")
   i = i.resize((40,40))
   circle = ImageTk.PhotoImage(i)
   ball = tk.Label(
@@ -165,11 +165,11 @@ def ball_Physics():
         window.update()
         score.set(score.get() + 1)
         score_label.config(text = "Score:\n" + str(score.get()))
-        print(score.get())
+        # print(score.get())
         window.update()
     window.update()
     ball.place(x = ball.winfo_rootx() - x_change, y = (ball.winfo_rooty() - 21) + y_change)
-    print(f"({rectangle.winfo_rootx()}, {rectangle.winfo_rooty()}) , ({ball.winfo_rootx()}, {ball.winfo_rooty()})")
+    # print(f"({rectangle.winfo_rootx()}, {rectangle.winfo_rooty()}) , ({ball.winfo_rootx()}, {ball.winfo_rooty()})")  to test location of ball and paddle
     window.update()
     time.sleep(.3)
     if ball.winfo_rooty() >= 375:
@@ -234,6 +234,7 @@ def yes_continue():
   relx = .165, 
   rely = .5
   )
+  score.set(0)
 
 def no_continue():
   quit()
